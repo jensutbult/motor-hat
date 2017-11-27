@@ -70,22 +70,22 @@ describe('lib/servolib.js', () => {
 
     it('should set PWM freq on move', () => {
       inst.moveTo(0);
-      pwm.setPWMFreq.should.be.calledWith(defFreq);
+      pwm.setPWMFreqSync.should.be.calledWith(defFreq);
     });
 
     it('should move to 0', () => {
       inst.moveTo(0);
-      pwm.setPWM.should.be.calledWith(0, 0, defMinCount);
+      pwm.setPWMSync.should.be.calledWith(0, 0, defMinCount);
     });
 
     it('should move to 100', () => {
       inst.moveTo(100);
-      pwm.setPWM.should.be.calledWith(0, 0, defMaxCount);
+      pwm.setPWMSync.should.be.calledWith(0, 0, defMaxCount);
     });
 
     it('should move to 50', () => {
       inst.moveTo(50);
-      pwm.setPWM.should.be.calledWith(0, 0, (defMaxCount + defMinCount) / 2);
+      pwm.setPWMSync.should.be.calledWith(0, 0, (defMaxCount + defMinCount) / 2);
     });
   });
 
@@ -102,22 +102,22 @@ describe('lib/servolib.js', () => {
 
     it('should set PWM freq on move with the new params', () => {
       inst.moveTo(0);
-      pwm.setPWMFreq.should.be.calledWith(newFreq);
+      pwm.setPWMFreqSync.should.be.calledWith(newFreq);
     });
 
     it('should move to 0 with the new params', () => {
       inst.moveTo(0);
-      pwm.setPWM.should.be.calledWith(0, 0, newMinCount);
+      pwm.setPWMSync.should.be.calledWith(0, 0, newMinCount);
     });
 
     it('should move to 100 with the new params', () => {
       inst.moveTo(100);
-      pwm.setPWM.should.be.calledWith(0, 0, newMaxCount);
+      pwm.setPWMSync.should.be.calledWith(0, 0, newMaxCount);
     });
 
     it('should move to 50 with the new params', () => {
       inst.moveTo(50);
-      pwm.setPWM.should.be.calledWith(0, 0, (newMaxCount + newMinCount) / 2);
+      pwm.setPWMSync.should.be.calledWith(0, 0, (newMaxCount + newMinCount) / 2);
     });
   });
 });
