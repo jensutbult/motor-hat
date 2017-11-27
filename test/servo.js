@@ -6,8 +6,10 @@ const sinon = require('sinon');
 const servo = require('../lib/servo.js');
 
 const pwm = {
-  setPWM: sinon.spy(),
-  setPWMFreq: sinon.spy(),
+  setPWM: sinon.stub().yieldsAsync(null),
+  setPWMFreq: sinon.stub().yieldsAsync(null),
+  setPWMSync: sinon.spy(),
+  setPWMFreqSync: sinon.spy(),
 };
 
 describe('lib/servolib.js', () => {
